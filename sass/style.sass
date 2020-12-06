@@ -1,4 +1,5 @@
 @import color&font
+@import media
 body
   background: $white
   font-size: 11px
@@ -8,3 +9,96 @@ body
 a
   text-decoration: none
   color: inherit
+.container
+  width: 940px
+  margin: 0 auto
+  +size-l
+    width: 100%
+.header
+  background: url(../upload/bg-header.jpg)
+  background-size: cover
+  color: $white
+.header_container
+  padding: 41px 0 71px
+  display: flex
+  flex-direction: column
+  align-items: center
+  +size-m
+    padding: 40px 0
+  +size-xs
+    padding: 30px 20px
+.header_title
+  @extend %font_bebas
+  font-size: 60px
+  letter-spacing: 5.70937px
+  text-align: center
+  margin: 317px 0 21px
+  +size-l
+    font-size: 40px
+    margin: 200px 0 10px
+  +size-xs
+    margin: 100px 0 10px
+    letter-spacing: 1px
+.header_text
+  font-weight: 600
+  font-size: 16px
+  text-align: center
+.header_scroll
+  font-weight: 600
+  letter-spacing: 3.7px
+  margin-top: 221px
+  +size-m
+    margin-top: 180px
+  +size-xs
+    margin-top: 100px
+  &:hover
+    color: lighten($dark_grey, 50%)
+.menu_container
+  display: flex
+  justify-content: space-between
+.menu
+  background: $white
+  padding: 24px 0
+  color: $dark_grey
+  +size-l
+    padding: 24px 20px
+.menu_links
+  +size-s
+    display: none
+.menu_links_link
+  font-weight: 600
+  font-size: 12px
+  letter-spacing: 1.09091px
+  margin-right: 40px
+  &:hover
+    text-shadow: 0 0 1px $black
+  &:last-child
+    margin-right: 0
+    +size-s
+      margin-bottom: 0
+  +size-s
+    margin: 0 0 20px 0
+.active
+  display: flex
+  flex-direction: column
+%burger_line
+  width: 100%
+  height: 4px
+  border-radius: 10px
+  display: inline-block
+  background: $dark_grey
+.burger-menu
+  width: 30px
+  cursor: pointer
+  display: none
+  span
+    @extend %burger_line
+    &::before
+      content: ""
+      @extend %burger_line
+      margin-top: 11px
+    &::after
+      content: ""
+      @extend %burger_line
+  +size-s
+    display: block
