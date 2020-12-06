@@ -1,0 +1,18 @@
+@font-face {
+  font-family: "bebas neue";
+  src: url(../font/BebasNeue-Regular.ttf);
+}
+body {
+  background: #fff;
+  font-size: 11px;
+  color: #48555B;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
