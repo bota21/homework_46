@@ -12,4 +12,13 @@ $(function () {
   $('.burger-menu').on('click', function () {
     $('.menu_links').toggleClass('active');
   });
+  $(document).on('scroll', function () {
+    var top = $(document).scrollTop();
+
+    if (top >= 780) {
+      $('.menu').addClass('scrollDown');
+    } else {
+      $('.menu').removeClass('scrollDown');
+    }
+  });
 });

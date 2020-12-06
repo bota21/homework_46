@@ -1,6 +1,7 @@
 @import color&font
 @import media
 body
+  @extend %font_open
   background: $white
   font-size: 11px
   color: $dark_grey
@@ -9,11 +10,14 @@ body
 a
   text-decoration: none
   color: inherit
+%text_transform
+  text-transform: uppercase
 .container
   width: 940px
   margin: 0 auto
   +size-l
     width: 100%
+    padding: 0 20px
 .header
   background: url(../upload/bg-header.jpg)
   background-size: cover
@@ -29,6 +33,7 @@ a
     padding: 30px 20px
 .header_title
   @extend %font_bebas
+  @extend %text_transform
   font-size: 60px
   letter-spacing: 5.70937px
   text-align: center
@@ -53,19 +58,27 @@ a
     margin-top: 100px
   &:hover
     color: lighten($dark_grey, 50%)
-.menu_container
-  display: flex
-  justify-content: space-between
 .menu
   background: $white
   padding: 24px 0
   color: $dark_grey
+  border-bottom: 1px solid $light_grey
+  width: 100%
   +size-l
     padding: 24px 20px
+.scrollDown
+  position: fixed
+  top: 0
+  margin-top: 0
+  z-index: 500
+.menu_container
+  display: flex
+  justify-content: space-between
 .menu_links
   +size-s
     display: none
 .menu_links_link
+  @extend %text_transform
   font-weight: 600
   font-size: 12px
   letter-spacing: 1.09091px
@@ -102,3 +115,156 @@ a
       @extend %burger_line
   +size-s
     display: block
+.promo
+  padding: 58px 0 118px
+  +size-m
+    padding: 20px 0 30px
+%line
+  &::after
+    content: ""
+    width: 50px
+    height: 2px
+    background: $light_blue
+    display: inline-block
+    margin-top: 10px
+.promo_title
+  @extend %text_transform
+  font-weight: 700
+  font-size: 18px
+  letter-spacing: 2.30625px
+  text-align: center
+  margin-bottom: 57px
+  display: flex
+  flex-direction: column
+  align-items: center
+  @extend %line
+  +size-m
+    margin-bottom: 15px
+.promo_wrappers
+  display: grid
+  grid-template-columns: repeat(2, 1fr)
+  grid-template-rows: 1fr
+  grid-gap: 77px
+  +size-m
+    grid-template-columns: 1fr
+    grid-gap: 15px
+.promo_wrappers_wrapper
+  &:last-child
+    display: flex
+    justify-content: center
+.promo_wrappers_wrapper_title
+  font-weight: 700
+  font-size: 20px
+  line-height: 27px
+  letter-spacing: 0.1875px
+  +size-m
+    text-align: center
+    line-height: 24px
+  +size-xs
+    font-size: 16px
+    line-height: 20px
+.promo_wrappers_wrapper_text
+  font-size: 13px
+  line-height: 23px
+  letter-spacing: 0.1875px
+  margin-top: 30px
+  +size-m
+    margin-top: 10px
+  +size-xs
+    font-size: 13px
+    line-height: 18px
+.promo_wrappers_wrapper_item
+  width: 140px
+  height: 224px
+  margin-right: 20px
+  padding: 18px
+  +size-xs
+    width: 130px
+  &:nth-child(2)
+    +size-xs
+      margin-right: 0
+  &:last-child
+    margin-right: 0
+    +size-xs
+      display: none
+@each $content in content-1, content-2, content-3
+  .#{$content}
+    background: url(../upload/#{$content}.jpg)
+.promo_wrappers_wrapper_item_title
+  font-weight: 800
+  font-size: 24px
+  line-height: 29px
+  color: $white
+  +size-xs
+    font-size: 18px
+.content
+  padding-bottom: 115px
+  +size-m
+    padding-bottom: 30px
+.content_wrappers
+  display: flex
+  justify-content: space-between
+  +size-m
+    flex-wrap: wrap
+    justify-content: center
+  &:first-child
+    margin-bottom: 78px
+    +size-m
+      margin-bottom: 30px
+.content_wrappers_title
+  font-weight: 700
+  font-size: 18px
+  letter-spacing: 2.30625px
+  display: flex
+  flex-direction: column
+  @extend %line
+.content_wrappers_text
+  max-width: 405px
+  line-height: 19px
+  letter-spacing: 0.2px
+  +size-s
+    margin-top: 10px
+.content_wrappers_button
+  width: 150px
+  height: 40px
+  font-weight: 700
+  font-size: 13px
+  letter-spacing: 0.5px
+  padding: 11px 29px
+  color: $white
+  background: $light_blue
+  +size-m
+    margin-top: 20px
+.content_wrappers_item
+  max-width: 295px
+  border: 1px solid $light_grey
+  padding: 138px 22px 39px
+  margin-right: 28px
+  +size-xs
+    padding: 85px 20px 20px
+    margin-right: 0
+  &:last-child
+    margin-right: 0
+  +size-m
+    margin-bottom: 15px
+@each $ic in project, structure, factory
+  .#{$ic}
+    background: url(../img/#{$ic}.png) 10% 10% no-repeat
+    +size-xs
+      background-size: 20%
+.content_wrappers_item_title
+  font-weight: bold
+  font-size: 16px
+  line-height: 24px
+  letter-spacing: 0.426667px
+  +size-xs
+    font-size: 14px
+    line-height: 18px
+.content_wrappers_item_text
+  font-size: 13px
+  line-height: 23px
+  letter-spacing: 0.1875px
+  margin-top: 13px
+  +size-xs
+    font-size: 12px
+    line-height: 16px
