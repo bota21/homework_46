@@ -10,12 +10,13 @@ $(() => {
     $('.menu_links').toggleClass('active');
   });
 
-  $(document).on('scroll', function () {
-    let top = $(document).scrollTop();
-    if (top >= 780) {
-      $('.menu').addClass('scrollDown');
-    } else {
-      $('.menu').removeClass('scrollDown');
+  $(window).bind('scroll', function () {
+    let navHeight = $(window).height() - 1;
+    if ($(window).scrollTop() > navHeight) {
+      $('.menu').addClass('fixed');
+    }
+    else {
+      $('.menu').removeClass('fixed');
     }
   });
 

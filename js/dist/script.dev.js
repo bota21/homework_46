@@ -12,13 +12,13 @@ $(function () {
   $('.burger-menu').on('click', function () {
     $('.menu_links').toggleClass('active');
   });
-  $(document).on('scroll', function () {
-    var top = $(document).scrollTop();
+  $(window).bind('scroll', function () {
+    var navHeight = $(window).height() - 1;
 
-    if (top >= 780) {
-      $('.menu').addClass('scrollDown');
+    if ($(window).scrollTop() > navHeight) {
+      $('.menu').addClass('fixed');
     } else {
-      $('.menu').removeClass('scrollDown');
+      $('.menu').removeClass('fixed');
     }
   });
 });
