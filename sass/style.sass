@@ -12,6 +12,9 @@ a
   color: inherit
 %text_transform
   text-transform: uppercase
+=link_hover($color)
+  &:hover
+    text-shadow: 0 0 1px ($color)
 .container
   width: 940px
   margin: 0 auto
@@ -86,8 +89,7 @@ a
     size: 12px
   letter-spacing: 1.09091px
   margin-right: 40px
-  &:hover
-    text-shadow: 0 0 1px $black
+  +link_hover($black)
   &:last-child
     margin-right: 0
     +size-s
@@ -362,6 +364,7 @@ a
   text-transform: uppercase
   background: $light_blue
   border: none
+  @extend %button
   +size-s
     width: 100px
 .navigation
@@ -399,6 +402,7 @@ a
   text-transform: capitalize
 .navigation_wrapper_link
   margin-bottom: 15px
+  +link_hover($white)
 .navigation_wrapper_address
   margin-bottom: 15px
   line-height: 18px

@@ -377,7 +377,7 @@ a {
   }
 }
 
-.offer_button:hover, .content_wrappers_button:hover {
+.form_wrapper_send:hover, .offer_button:hover, .content_wrappers_button:hover {
   background: #007fb2;
 }
 
@@ -643,6 +643,9 @@ a {
 
 .navigation_wrapper_link {
   margin-bottom: 15px;
+}
+.navigation_wrapper_link:hover {
+  text-shadow: 0 0 1px #fff;
 }
 
 .navigation_wrapper_address {
